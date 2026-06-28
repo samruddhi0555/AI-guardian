@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  /* Immersive Theme Colors */
+  --color-bg: #05070a;
+  --color-navy-deep: #0a0c1b;
+  --color-cyan-glow: #00f3ff;
+  --color-pink-glow: #ff00c8;
+  --color-text-dim: #94a3b8;
+}
+
+/* Immersive UI Background Gradient */
+.immersive-bg {
+  background-color: #05070a;
+  background-image: 
+    radial-gradient(circle at 100% 0%, rgba(0, 243, 255, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(255, 0, 200, 0.05) 0%, transparent 40%);
+}
+
+/* Cyberpunk Glassmorphic Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel-accent-cyan {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 243, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 243, 255, 0.05);
+}
+
+.glass-panel-accent-pink {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 0, 200, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(255, 0, 200, 0.05);
+}
+
+.glass-panel-pink {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 0, 200, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel-heavy {
+  background: rgba(10, 12, 27, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Neon Glows */
+.glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.35);
+}
+
+.glow-pink {
+  box-shadow: 0 0 15px rgba(255, 0, 200, 0.35);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 12px rgba(0, 243, 255, 0.6);
+}
+
+.glow-text-pink {
+  text-shadow: 0 0 12px rgba(255, 0, 200, 0.6);
+}
+
+.text-shadow-neon {
+  text-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05070a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 243, 255, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 0, 200, 0.4);
+}
+
+/* Grid & Dots Overlay */
+.cyber-dots {
+  background-image: radial-gradient(rgba(0, 243, 255, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Keyframes for Scanlines */
+@keyframes scanline {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanlines::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  z-index: 10;
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
